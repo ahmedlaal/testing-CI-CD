@@ -24,12 +24,4 @@ jobs:
         run: firebase login --no-localhost --token ${{ secrets.FIREBASE_TOKEN }}
 
       - name: Deploy to Firebase
-        run: firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: web-files
-          path: |
-            index.html
-            style.css
+        run: firebase deploy --only hosting
